@@ -1,0 +1,111 @@
+@use "../abstracts/"as*;
+header{
+    height: 100vh;
+    position: relative;
+    .container{
+        .content{
+            .part{
+                @include flex($ai:center);
+                @include respond(350){
+                    @include flex($ai:initial,$r:10);
+                    &.part1{
+                       padding-top:80px ;
+                    }
+                }
+                @include respond(650){
+                    &.part2{
+                        @include flex($jc:center,$ai:center)
+                    }
+                }
+                @include respond(850){
+                    @include flex($ai:center,$r:initial);
+                    &.part1{
+                       padding-top:0px ;
+                    }
+                }
+                h1{
+                    font-size: 60px;
+                    @include respond(350){
+                        font-size: 40px;
+                    }
+                    @include respond(650){
+                        font-size: 50px;
+                    }
+                    @include respond(1050){
+                        font-size: 60px;
+                    }
+                }
+
+                p{
+                    margin-block: 15px;
+                    font-size: 14px;
+                }
+
+                .cd-intro{
+                    margin: 0;
+                    .cd-headline.clip{
+                        font-size: 18px;
+                        text-align: start;
+                        padding: 0;
+                        font-weight: 400;
+                        .cd-words-wrapper::after{
+                            background-color:$secondColor;
+                        }
+                    }
+                }
+                .video{
+                    margin-top: 15px;
+                    @include flex($ai:center,$c:20px);
+                    a{
+                        font-size: 14px;
+                        position: relative;
+                        color: $firstColor;
+                        @include flex(center,center);
+                        transition-duration: .5s;
+                        &::before{
+                            @include createEle(0px,0px);
+                            background-color: transparent;
+                            border-radius: 50%;
+                            @include position($t:50%,$l:50%);
+                            transform: translate(-50%,-50%);
+                            transition-duration: .5s;
+                        }
+                        &:hover{
+                            color: #fff;
+                        }
+                        &:hover::before{
+                            width: 40px;
+                            height: 40px;
+                            background-color: $firstColor;
+                        }    
+                    }
+                }
+            }   
+        }
+    }
+    >img{
+        @include position($b:0,$l:0);
+        transform:  rotateX(180deg);
+    }
+    .arrows{
+        img{
+            @include distance(25px,20px);
+            @include position($b:80px,$l:50%);
+            transform: translate(-50%);
+            &:nth-of-type(2){
+                transform: translate(-50%,15px);
+            }
+            &:nth-of-type(3){
+                transform: translate(-50%,30px);
+            }
+            @for $i from 1 through 3{
+                &:nth-of-type(#{$i}){
+                    animation:arrow#{$i} 3s infinite;
+                }
+            }
+        }
+
+    }
+}
+
+  

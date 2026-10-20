@@ -1,0 +1,69 @@
+@mixin createEle ($w,$h){
+    content: "";
+    display: block;
+    width: $w;
+    height: $h;
+}
+
+@mixin position($p:absolute,$t:initial,$l:initial,$b:initial,$r:initial,$z:initial){
+    position: $p;
+    top: $t;
+    left: $l;
+    bottom: $b;
+    right: $r;
+    z-index: $z;
+}
+
+@mixin flex($f:flex,$jc:initial,$ai:initial,$d:initial,$r:initial,$c:initial){
+    display: $f;
+    justify-content: $jc;
+    align-items: $ai;
+    flex-direction: $d;
+    row-gap: $r;
+    column-gap: $c;
+}
+
+@mixin distance($w:100%,$h:auto){
+    width: $w;
+    height: $h;
+}
+
+@mixin respond($breakPoint){
+    @if($breakPoint==350){
+        @media (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakPoint==450){
+        @media (min-width: 371px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakPoint==650){
+        @media (min-width: 577px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakPoint==850){
+        @media (min-width: 769px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakPoint==1050){
+        @media (min-width: 992px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+    @else if($breakPoint==1250){
+        @media (min-width: 1181px) and (max-width: 1300px) {
+            @content;
+        }
+    }
+}
+
+@mixin background($p:initial,$s:initial,$r:initial,$a:initial){
+    background-position:$p ;
+    background-size: $s;
+    background-repeat: $r;
+    background-attachment: $a;
+}

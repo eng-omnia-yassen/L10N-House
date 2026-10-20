@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+.arrow{
+    @include position($p:fixed,$t:50%,$r:-55px);
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: $firstColor;
+    font-size: 14px;
+    color: #fff;
+    padding: 15px 5px;
+    transition-duration: .5s;
+    border-top-left-radius:10px;
+    border-bottom-left-radius: 10px;
+    &:hover{
+        color: #fff;
+        right: 0;
+    }
+}

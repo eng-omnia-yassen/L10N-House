@@ -1,0 +1,87 @@
+@use "../abstracts/"as*;
+
+#Services{
+    .row{
+        row-gap: 40px;
+        .box{
+            .item{
+                transform: translateY(0px);
+                transition-duration: 1s;
+                padding:25px 20px;
+                width: 95%;
+                margin: auto;
+                border-radius: 15px;
+                &>*:not(:last-child){
+                    margin-bottom: 15px;
+                }
+                @include respond(350){
+                    width: 90%;
+                }
+                @include respond(850){
+                    width: 100%;
+                }
+                &:hover{
+                    transform: translateY(-10px);
+                    background-color: #fff;
+                    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+                }
+                img{
+                    width: 15%;
+                    @include respond(350){
+                        width: 25%;
+                    }
+                    @include respond(650){
+                        width: 20%;
+                    }
+                    @include respond(1050){
+                        width: 15%;
+                    }
+                }
+                h3{
+                    font-size: 20px;
+                }
+                p{
+                    width: 85%;
+                    margin: auto;
+                    line-height: 1.5;
+                }
+            
+            }
+        } 
+    }
+    .video{
+        position: relative;
+        @include background($s:cover,$r:no-repeat,$a:fixed);
+        background-image: url("../images/video-bg.jpg");
+        @include flex($jc:center,$ai:center,$d:column);
+        .title{
+            h2{
+                color: #fff;
+            }
+            ::before{
+                width: 20%;
+                background-color: #fff;
+            }
+        }
+        &::before{
+            @include createEle(100%,100%);
+            @include position($t:0,$l:0);
+            background: radial-gradient(#68b703, #305d00) ;
+            opacity: .8;
+        }
+        i{
+            transition-duration: 1s;
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+    }
+    &:hover .video{
+        .title{
+            h2::before{
+                width: 70%;
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@keyframes arrow1{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes arrow2{
+    0%{
+        opacity: 0;
+        transform: translate(-50%,0px);
+
+    }
+    50%{
+        opacity: 1;
+        transform: translate(-50%,15px);
+
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%,15px);
+
+    }
+}
+
+@keyframes arrow3{
+    0%{
+        transform: translate(-50%,0px);
+        opacity: 0;
+    }
+    50%{
+        transform: translate(-50%,30px);
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-50%,30px);
+    }
+}
+
+
+@keyframes loadingPage {
+    0%{
+        transform: scale(.7);
+    }
+    100%{
+        transform: scale(1);
+    }
+}

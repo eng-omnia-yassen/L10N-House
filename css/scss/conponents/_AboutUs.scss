@@ -1,0 +1,33 @@
+@use "../abstracts/"as*;
+#AboutUs{
+    .content{
+        .part{
+            @include respond(350){
+                row-gap:20px ;
+                width: 95%;
+                margin: auto;
+            }
+            @include respond(1050){
+                row-gap:0px ;
+                
+            }
+            .part1{
+                @include flex($jc:center,$ai:center);
+                .item{
+                    img{
+                        border-radius: 10px;
+                    }
+                }
+            }   
+            .part2{
+                p{
+                    line-height: 1.5;
+                    .text{
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+}

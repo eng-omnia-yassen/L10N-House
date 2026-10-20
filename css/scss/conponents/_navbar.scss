@@ -1,0 +1,101 @@
+@use "../abstracts" as *;
+
+nav.navbar {
+    @include position($p:fixed,$t:0,$l:0,$z:100);
+    width: 100%;
+    transition-duration: 1s;
+    &.scroll{
+        background-color:rgba(251, 252, 252,.9);
+        .navbar-brand {
+            width: 9%;
+            @include respond(350){
+                width: 20%;
+            }
+            @include respond(650){
+                width: 15%;
+            }
+            @include respond(850){
+                width: 12%;
+            }
+        }
+    }
+    .navbar-brand {
+        width: 12%;
+
+        @include respond(350){
+            width: 25%;
+        }
+        @include respond(450){
+            width: 20%;
+        }
+        @include respond(850){
+            width: 12%;
+        }
+    }
+    .navbar-toggler {
+        @include respond(350){
+            @include flex(flex,center,center,$d:column,$r:5px);
+            
+        }
+        padding-block: 10px ;
+        border-color: $firstColor;
+        &:focus{
+            box-shadow: none;
+        }
+        span{
+            @include createEle(25px,2px);
+            background-color: $firstColor;
+        }
+        @include respond(1050){
+            @include flex(none)
+        }
+    }
+
+    .navbar-nav {
+        column-gap: 20px;
+        @include respond(350){
+            column-gap: 0;
+            row-gap: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            padding: 20px 0px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        @include respond(1050){
+            column-gap: 20px;
+            row-gap: 0px;
+            background-color:transparent;
+            padding: 0px 0px;
+            border-radius: 0px;
+            margin-top: 0px;
+        }
+        .nav-item {
+            .nav-link {
+                color: $firstColor;
+                position: relative;
+                padding: 0px;
+                font-weight: 500;
+                &.active,
+                &:hover {
+                    color: $firstColor;
+                }
+
+                &::after {
+                    @include createEle(0%,2px);
+                    @include position($l:50%,$b:-10px);
+                    position: absolute;
+                    background-color: $secondColor;
+                    transition-duration: .5s;
+                    transform: translateX(-50%);
+                }
+
+                &.active::after,
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

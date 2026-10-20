@@ -1,0 +1,114 @@
+@use "../abstracts/" as *;
+
+#LanguageSectors{
+    .content{
+        .section1{
+            min-height: 300px;
+            position: relative;
+            @include background($s:cover,$r:no-repeat,$a:fixed);
+            background-image: url("../images/youth.jpg");
+            @include flex($jc:center,$ai:center,$d:column);
+            .title{
+                h2{
+                    color: #fff;
+                    &::before{
+                        width: 30%;
+                        background-color: #fff;
+                    }
+                }
+
+            }
+            &:hover{
+                .title{
+                    h2::before{
+                        width: 70%;
+                    }
+                }
+            }
+            &::before{
+                @include createEle(100%,100%);
+                @include position($t:0,$l:0);
+                background: radial-gradient(#68b703, #305d00) ;
+                opacity: .8;
+            }
+            .buttons{
+                button{
+                    border-radius: 15px;
+                    padding: 10px 20px;
+                    font-weight: 600;
+                    transform: translateY(0);
+                    transition-duration: .5s;
+                    transition-property: all;
+                    &:hover{
+                        color: $secondColor;
+                        transform: translateY(-5px);
+                    }
+                }
+
+            }
+        }
+        .section2{
+            .title{
+                h2{
+                    &::before{
+                        width: 8%;
+                    }
+                }
+            }
+            &:hover{
+                .title{
+                   h2::before{
+                       width: 20%;
+                       @include respond(350){
+                            width: 40%;
+                       }
+                       @include respond(850){
+                            width: 30%;
+                       }
+                   }
+               }
+            }
+            .owl-carousel{
+                .owl-stage{
+                    @include flex($jc:center,$ai:center);
+                    img{
+                        width: 80%;
+                        margin: auto;
+                    }
+                }
+                .owl-dots{
+                    @include flex($jc:center,$ai:center);
+                    @include respond(350){
+                        display: none;
+                    }
+                    @include respond(850){
+                        display:flex;
+                    }
+                    column-gap: 10px;
+                    .owl-dot{
+                        opacity: .5;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 50%;
+                        background-color: $secondColor;
+                        &.active{
+                            opacity: 1;
+                        }
+                    }
+                }
+               
+            }
+            
+        }
+
+    }
+    
+        
+    
+       
+}
+
+
+
+
+    

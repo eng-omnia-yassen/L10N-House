@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+footer{
+    background-color: #333333;
+    border-top: 2px solid #2f2b63;
+    span{
+        letter-spacing: 1.5px;
+    }
+}
