@@ -15,13 +15,45 @@ function updateActiveOfNavLinkWhileScroll ($scrollY) {
         }
     })
 }
+$(window).scroll(function(){
+    let $arrow=$('.arrow'),
+        anchor=$arrow.find('a'),
+        sectionId= anchor.attr('href'),
+        section=$(sectionId),
+        topOfSection=section.offset().top,
+        bottomOfSection=section.outerHeight(true);
+        if(window.scrollY>bottomOfSection/2){
+            console.log('ok')
+            $arrow.css('right','-55px')
+        }
+        else{
+            $arrow.css('right','-100px')
 
-// function goTOHome(){
-//     let $arrow=document.querySelector('.arrow');
-//     $arrow.addEventListener('click',function(){
-//         console.log('ok')
-//     })
-// }
+        }
+})
+
+
+function goTOHome(){
+    let $arrow=$('.arrow'),
+    anchor=$arrow.find('a'),
+    sectionId= anchor.attr('href'),
+    section=$(sectionId),
+    topOfSection=section.offset().top,
+
+    bottomOfSection=topOfSection+section.outerHeight(true);
+    $arrow.click(function(){
+        window.scrollTo(0,topOfSection)
+        $arrow.css('top',bottomOfSection/2)
+        $arrow.css('bottom','initial')
+    })
+
+    $arrow.hover(function(){
+        $arrow.css('right','0')
+    },function(){
+            $arrow.css('right','-55px')
+    })
+    // $arrow.css('top',"50%");
+}
 
 function changeActiveForNavLink(){
     let navLink=$('.nav-link');
