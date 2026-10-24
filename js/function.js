@@ -16,16 +16,12 @@ function updateActiveOfNavLinkWhileScroll ($scrollY) {
     })
 }
 
-function goTOHome(){
-    let $arrow=document.querySelector('.arrow');
-    $arrow.addEventListener('click',function(){
-        console.log('ok')
-        // $arrow.css('right',-100)
-
-        // $arrow.css('top',"50%")
-
-    })
-}
+// function goTOHome(){
+//     let $arrow=document.querySelector('.arrow');
+//     $arrow.addEventListener('click',function(){
+//         console.log('ok')
+//     })
+// }
 
 function changeActiveForNavLink(){
     let navLink=$('.nav-link');

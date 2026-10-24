@@ -7,6 +7,7 @@ $window.on("DOMContentLoaded",function(){
     });
 })
 
+
 scrollWindow()
     
 $window.on('scroll',function(){
@@ -17,6 +18,14 @@ $window.on('scroll',function(){
 
 changeActiveForNavLink()
 
+new WOW({
+    animateClass: 'animate__animated',
+    boxClass:     'wow',
+    offset: 0,
+    mobile: true,
+    live: true
+}).init();
+
 let services=null;
 (async function (){
     let res= await fetch('https://semicode.tech/api/v1/l10nhouse/services');
@@ -25,7 +34,7 @@ let services=null;
     services.forEach(service => {
         let servicesContainer=$("#Services .row");
         servicesContainer.append(`
-        <div class="col-md-6 col-lg-6 box">
+        <div class="col-md-6 col-lg-6 box wow ${((i+1)%2==0)? 'animate__fadeInRight':'animate__fadeInLeft'}" data-wow-delay='${(i*.3)}s' data-wow-duration=".5s">
             <div class="item text-center">
             <img src="images/${service.icon}" alt="s1-B6kku4QP" class="rounded-circle">
             <h3>${service.title}</h3>
@@ -73,12 +82,8 @@ let languages=null;
     })
 }())
 
-wow = new WOW({
-    animateClass: 'animate__animated',
-    boxClass:     'wow'
-})
 
-new WOW().init();
+
 
 $(document).ready(function(){
   $(".owl-carousel").owlCarousel({
