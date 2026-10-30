@@ -103,6 +103,15 @@
         overflow-x: hidden;
         .box{
             width: 40%;
+            @include respond(350){
+                width: 80%;
+            }
+            @include respond(650){
+                width: 60%;
+            }
+            @include respond(850){
+                width: 40%;
+            }
             border-radius: 0;
             @include position($t:0,$r:0);
             border-top-left-radius:10px;

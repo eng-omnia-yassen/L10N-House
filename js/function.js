@@ -23,7 +23,6 @@ $(window).scroll(function(){
         topOfSection=section.offset().top,
         bottomOfSection=section.outerHeight(true);
         if(window.scrollY>bottomOfSection/2){
-            console.log('ok')
             $arrow.css('right','-55px')
         }
         else{
@@ -45,6 +44,10 @@ function goTOHome(){
         window.scrollTo(0,topOfSection)
         $arrow.css('top',bottomOfSection/2)
         $arrow.css('bottom','initial')
+        $arrow.mouseenter(function () { 
+            $arrow.css('right','0')
+            
+        });
     })
 
     $arrow.hover(function(){

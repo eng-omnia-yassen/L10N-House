@@ -93,7 +93,7 @@ $(document).ready(function(){
     slideBy:2,
     responsive :{
         350:{
-            items:1
+            items:1,
         },
         
         650:{

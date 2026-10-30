@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 .arrow{
-    @include position($p:fixed,$t:50%,$r:-55px);
+    @include position($p:fixed,$b:20%,$r:-100px);
     transform: translateY(-50%);
     cursor: pointer;
     background-color: $firstColor;
@@ -14,5 +14,12 @@
     &:hover{
         color: #fff;
         right: 0;
+    }
+    a{
+        text-decoration: none;
+        color: #fff;
+        &:hover{
+            color: #fff;
+        }
     }
 }

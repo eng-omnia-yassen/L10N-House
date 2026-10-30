@@ -954,6 +954,23 @@ footer span {
 }
 .popup[data-popup-name=language] .box {
   width: 40%;
+}
+@media (max-width: 1300px) {
+  .popup[data-popup-name=language] .box {
+    width: 80%;
+  }
+}
+@media (min-width: 577px) and (max-width: 1300px) {
+  .popup[data-popup-name=language] .box {
+    width: 60%;
+  }
+}
+@media (min-width: 769px) and (max-width: 1300px) {
+  .popup[data-popup-name=language] .box {
+    width: 40%;
+  }
+}
+.popup[data-popup-name=language] .box {
   border-radius: 0;
   position: absolute;
   top: 0;
@@ -1017,10 +1034,10 @@ footer span {
 
 .arrow {
   position: fixed;
-  top: 50%;
+  top: initial;
   left: initial;
-  bottom: initial;
-  right: -55px;
+  bottom: 20%;
+  right: -100px;
   z-index: initial;
   transform: translateY(-50%);
   cursor: pointer;
@@ -1035,6 +1052,13 @@ footer span {
 .arrow:hover {
   color: #fff;
   right: 0;
+}
+.arrow a {
+  text-decoration: none;
+  color: #fff;
+}
+.arrow a:hover {
+  color: #fff;
 }
 
 .loadingPage {
