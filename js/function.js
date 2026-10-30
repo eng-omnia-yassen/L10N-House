@@ -55,7 +55,6 @@ function goTOHome(){
     },function(){
             $arrow.css('right','-55px')
     })
-    // $arrow.css('top',"50%");
 }
 
 function changeActiveForNavLink(){

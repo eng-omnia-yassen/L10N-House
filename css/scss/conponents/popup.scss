@@ -12,6 +12,12 @@
     
     .box{
         @include distance(70%);
+        @include respond(350){
+            width: 90%;
+        }
+        @include respond(1050){
+            width: 85%;
+        }
         margin: 50px auto;
         border-radius: 10px;
         position: relative;
@@ -23,7 +29,16 @@
             }
         }
         .body{
-            padding: 15px 20px; 
+
+            padding: 15px 20px;
+            .row{
+                @include respond(350){
+                    row-gap: 15px;
+                }
+                @include respond(1050){
+                    row-gap: 0px;
+                }
+            } 
             .section{
                 ol{
                     li::marker{

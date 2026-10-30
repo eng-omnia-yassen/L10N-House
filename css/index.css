@@ -865,6 +865,18 @@ footer span {
 .popup .box {
   width: 70%;
   height: auto;
+}
+@media (max-width: 1300px) {
+  .popup .box {
+    width: 90%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .popup .box {
+    width: 85%;
+  }
+}
+.popup .box {
   margin: 50px auto;
   border-radius: 10px;
   position: relative;
@@ -881,6 +893,16 @@ footer span {
 }
 .popup .box .body {
   padding: 15px 20px;
+}
+@media (max-width: 1300px) {
+  .popup .box .body .row {
+    row-gap: 15px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1300px) {
+  .popup .box .body .row {
+    row-gap: 0px;
+  }
 }
 .popup .box .body .section ol li::marker {
   color: #ee5e00;
